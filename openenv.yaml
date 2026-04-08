@@ -7,7 +7,7 @@ runtime: fastapi
 app:
   module: server.app
   app: app
-port: 8000
+port: 7860
 tags:
   - openenv
   - travel
