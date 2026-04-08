@@ -16,7 +16,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Body
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
@@ -105,7 +105,7 @@ def list_tasks():
 
 
 @app.post("/reset", response_model=ItineraryObservation)
-def reset(request: ResetRequest):
+def reset(request: ResetRequest = Body(default=ResetRequest())):
     task_name = request.task_name or "basic_validation"
     if task_name not in TASKS:
         raise HTTPException(
