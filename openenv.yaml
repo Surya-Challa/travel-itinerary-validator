@@ -1,0 +1,15 @@
+spec_version: 1
+name: travel_itinerary_validator
+version: "0.1.0"
+description: "Travel Itinerary Validator - AI agent reviews travel plans for constraint violations including overlapping flights, impossible connections, visa issues, and budget overruns"
+type: space
+runtime: fastapi
+app:
+  module: server.app
+  app: app
+port: 8000
+tags:
+  - openenv
+  - travel
+  - validation
+  - real-world
