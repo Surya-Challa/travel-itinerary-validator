@@ -13,7 +13,7 @@ Environment variables:
   API_BASE_URL   LLM endpoint  (default: https://router.huggingface.co/v1)
   MODEL_NAME     Model ID      (default: Qwen/Qwen2.5-72B-Instruct)
   HF_TOKEN       API key
-  ENV_BASE_URL   Environment server URL (default: http://localhost:8000)
+  ENV_BASE_URL   Environment server URL (default: http://localhost:7860)
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ from openai import OpenAI
 API_KEY = os.getenv("HF_TOKEN") or os.getenv("API_KEY", "")
 API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
-ENV_BASE_URL = os.getenv("ENV_BASE_URL", "http://localhost:8000")
+ENV_BASE_URL = os.getenv("ENV_BASE_URL", "http://localhost:7860")
 
 TASKS = ["basic_validation", "connection_logic", "complex_trips"]
 BENCHMARK = "travel_itinerary_validator"
